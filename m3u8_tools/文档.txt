@@ -1,0 +1,17 @@
+m3u8切片工具：
+
+1. ffmpeng下载：
+  1. brew下载：https://zhuanlan.zhihu.com/p/90099862
+  2. 压缩包下载 ：
+      > 下载：https://blog.51cto.com/aiyc/5151109
+      > 移动：https://www.cnblogs.com/lyonwu/p/15780100.html
+
+2. 文件解释
+    1. enc.key文件：密钥文件，用于加密生成的.ts文件
+    2. key_info.txt文件：写入.m3u8文件的相关加密信息（执行脚本的时候会重新自动生成）。
+    3. mp4文件夹：所有需要切片的.mp4资源都放入到此文件中
+    4. m3u8文件夹：生成切片的目标文件夹。
+        > 以视频资源文件名为文件夹名，内部存放以视频资源文件名为文件名的m.3u8文件和.ts文件
+
+4. 执行 m3u8.sh 脚本
+
