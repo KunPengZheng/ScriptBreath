@@ -121,7 +121,7 @@ opt() {
     #   • 应用签名的密钥信息。
     # 8. packageFlags:
     #   • 包含应用的特性标志，例如是否为系统应用、可调试等。
-    read -p "请输入应用包名" pn
+    read -p "请输入应用包名：" pn
     adb shell dumpsys package "$pn"
     opt
     ;;
@@ -138,7 +138,7 @@ opt() {
     opt
     ;;
   "14")
-     read -p "请输入上传文件的绝对路径" fp
+     read -p "请输入上传文件的绝对路径：" fp
      adb push "$fp" /sdcard/Download/
      opt
      ;;
