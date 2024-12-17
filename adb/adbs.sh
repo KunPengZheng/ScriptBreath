@@ -139,6 +139,7 @@ opt() {
     ;;
   "14")
      read -p "请输入上传文件的绝对路径：" fp
+     # 默认输出路径为 /sdcard/Download/
      adb push "$fp" /sdcard/Download/
      opt
      ;;
