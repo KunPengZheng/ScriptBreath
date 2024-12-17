@@ -59,3 +59,5 @@ opt() {
     ;;
   esac
 }
+
+init

@@ -15,7 +15,8 @@ opt() {
   option10="10). 查询已连接设备的指定应用的详细信息"
   option11="11). 启动设备的系统设置页面"
   option12="12). 实时显示设备的系统日志"
-  option12="12). 查询设备支持的cpu架构(abi)"
+  option13="13). 查询设备支持的cpu架构(abi)"
+  option14="14). push文件到 Android 设备的指定目录下"
 
   echo ""
   echo "$option_tip"
@@ -31,6 +32,8 @@ opt() {
   echo "$option10"
   echo "$option11"
   echo "$option12"
+  echo "$option13"
+  echo "$option14"
   echo ""
 
   read -r choice
@@ -134,6 +137,11 @@ opt() {
     adb shell getprop ro.product.cpu.abilist
     opt
     ;;
+  "14")
+     read -p "请输入上传文件的绝对路径" fp
+     adb push "$fp" /sdcard/Download/
+     opt
+     ;;
   *)
     echo "无此选项，请重新选择"
     opt
