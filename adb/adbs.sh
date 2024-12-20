@@ -17,6 +17,7 @@ opt() {
   option12="12). 实时显示设备的系统日志"
   option13="13). 查询设备支持的cpu架构(abi)"
   option14="14). push文件到 Android 设备的指定目录下"
+  option15="15). 安装apk"
 
   echo ""
   echo "$option_tip"
@@ -34,6 +35,7 @@ opt() {
   echo "$option12"
   echo "$option13"
   echo "$option14"
+  echo "$option15"
   echo ""
 
   read -r choice
@@ -141,6 +143,11 @@ opt() {
      read -p "请输入上传文件的绝对路径：" fp
      # 默认输出路径为 /sdcard/Download/
      adb push "$fp" /sdcard/Download/
+     opt
+     ;;
+ "15")
+     read -p "请输入需要安装的apk的绝对路径：" fp
+     adb install -r "$fp"
      opt
      ;;
   *)
